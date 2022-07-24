@@ -88,7 +88,7 @@ button {
 hr {
 	margin: 10% 0;
 	width: 60%;
-	background: #fff;
+	background: $white;
 	height: 2px;
 }
 p{
@@ -97,12 +97,19 @@ p{
 	text-align: center;
 }
 a{
-	color: #4036af;
+	color: $violet;
 	font-weight: bold;
 	text-decoration: none;
-	transition: all .3s ease-out;
+	transition: all .2s ease-out;
 
 	&:hover{
 		filter: brightness(.8);
 	}
+}
+.bi-eye-slash{
+	position: absolute;
+
+	right: 10px;
+	cursor: pointer;
+	color: $purple;
 }
