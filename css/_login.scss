@@ -25,6 +25,16 @@ h1 {
 				}
 			}
 		}
+		&:valid {
+			border-bottom: 2px solid $orange;
+			+ {
+				label {
+					font-size: 13px;
+					margin-top: 0;
+					color: $violet;
+				}
+			}
+		}
 	}
 	position: relative;
 	padding-top: 13px;
@@ -56,6 +66,7 @@ h1 {
 	font-size: 16px;
 	transition: all .3s ease-out;
 	border-radius: 1rem;
+	width: 28rem;
 }
 button {
 	background: transparent;
