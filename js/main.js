@@ -5,28 +5,22 @@ let nome = document.querySelector('#nome')
 let labelNome = document.querySelector('#labelNome')
 let validNome = false
 
-
 let usuario = document.querySelector('#usuario')
 let labelUsuario = document.querySelector('#labelUsuario')
 let validUsuario = false
-
 
 let senha = document.querySelector('#senha')
 let labelSenha = document.querySelector('#labelSenha')
 let validSenha = false
 
-
 let confirmSenha = document.querySelector('#confirmSenha')
 let labelConfirmSenha = document.querySelector('#labelConfirmSenha')
 let validConfirmSenha = false
-
 
 /* MENSSAGEM ERRO / SUCESSO */
 
 let msgError = document.querySelector('#msgError')
 let msgSuccess = document.querySelector('#msgSuccess')
-
-
 
 /* VALIDAÇÃO */
 
@@ -107,8 +101,6 @@ function cadastrar() {
         /* REDIRECT DE PÁGINA DEPOIS DE PREENCHIDO */
         setTimeout(function () {
             window.location.href = "/index.html"
-
-
         }, 3000)
         msgSuccess.setAttribute('style', 'display: block')
         msgSuccess.innerHTML = '<strong> Cadastrando usuário...</strong>'
