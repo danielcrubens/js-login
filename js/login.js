@@ -1,5 +1,48 @@
 
 let btn = document.querySelector('.bi-eye-slash')
+let btnEntrar = document.querySelector('#entrar')
+
+let usuario = document.querySelector('#usuario')
+let userLabel = document.querySelector('#userLabel')
+
+let senha = document.querySelector('#senha')
+let senhaLabel = document.querySelector('#senhaLabel')
+
+let msgError = document.querySelector('#msgError')
+
+
+let inputs = document.querySelectorAll("input")
+let button = document.querySelector("button")
+
+let listaUser = []
+
+let userValid = {
+  nome: '',
+  user: '',
+  senha: ''
+}
+
+function checkInputs(inputs) {
+  let preenchido = true;
+
+  inputs.forEach(function (input) {
+      if (input.value === "") {
+        preenchido = false;
+      }
+  });
+  return preenchido;
+}
+
+inputs.forEach(function (input) {
+  input.addEventListener("keyup", function () {
+      if (checkInputs(inputs)) {
+          button.disabled = false;
+      } else {
+          button.disabled = true;
+      }
+  });
+});
+
 
 btn.addEventListener('click', function () {
   let inputSenha = document.querySelector('#senha')
@@ -13,23 +56,7 @@ btn.addEventListener('click', function () {
 })
 
 
-
-function entrar() {
-  let usuario = document.querySelector('#usuario')
-  let userLabel = document.querySelector('#userLabel')
-
-  let senha = document.querySelector('#senha')
-  let senhaLabel = document.querySelector('#senhaLabel')
-
-  let msgError = document.querySelector('#msgError')
-
-  let listaUser = []
-
-  let userValid = {
-    nome: '',
-    user: '',
-    senha: ''
-  }
+btnEntrar.addEventListener('click',function(){
   listaUser = JSON.parse(localStorage.getItem('listaUser'))
 
   /* VARRER A LISTAUSER ITEM POR ITEM */
@@ -52,6 +79,7 @@ if (usuario.value == userValid.user && senha.value == userValid.senha) {
   localStorage.setItem('token',token)
   
 localStorage.setItem('userLogado', JSON.stringify(userValid))
+$("input[type=submit]").prop("disabled", false);
 
 } else {
   userLabel.setAttribute('style', 'color: red')
@@ -62,4 +90,4 @@ localStorage.setItem('userLogado', JSON.stringify(userValid))
     msgError.innerHTML = 'Usuário ou senha incorretos'
     usuario.focus()
 }
-}
+})

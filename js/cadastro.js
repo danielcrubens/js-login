@@ -17,6 +17,8 @@ let confirmSenha = document.querySelector('#confirmSenha')
 let labelConfirmSenha = document.querySelector('#labelConfirmSenha')
 let validConfirmSenha = false
 
+let btnCadastrar = document.querySelector('#cadastrar')
+
 /* MENSSAGEM ERRO / SUCESSO */
 
 let msgError = document.querySelector('#msgError')
@@ -79,9 +81,8 @@ confirmSenha.addEventListener('keyup', () => {
    }
 })
 
-
 /* CADASTRAR */
-function cadastrar() {
+btnCadastrar.addEventListener('click',function(){
    if (validNome && validUsuario && validSenha && validConfirmSenha) {
 
       let listaUser = JSON.parse(localStorage.getItem('listaUser') || '[]')
@@ -112,7 +113,10 @@ function cadastrar() {
       msgSuccess.setAttribute('style', 'display: none')
       msgSuccess.innerHTML = ''
    }
-}
+})
+
+
+
 
 btn.addEventListener('click', function () {
    let inputSenha = document.querySelector('#senha')

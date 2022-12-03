@@ -68,22 +68,32 @@ h1 {
 	width: 28rem;
 }
 button {
-	background: transparent;
-	border-color: $orange;
-	color: $violet;
+
 	font-weight: bold;
 	font-size: 12pt;
 	margin-top: 20px;
 	border-radius: 5px;
-	cursor: pointer;
-	border: 2px solid $orange;
 	padding: 0.5rem 2rem;
 	transition: all 0.3s ease-out;
-	&:hover {
-		background: $orange;
-		color: $white;
+	&:disabled{
+		background: #cccc;
+		color: #666666;
+		cursor: auto;
+
+	}	
+	&:enabled{
+		background: transparent;
+		border-color: $orange;
+		color: $violet;
+		border: 2px solid $orange;
+		cursor: pointer;
+		&:hover {
+			background: $orange;
+			color: $white;
+		}
 	}
 }
+
 hr {
 	margin: 10% 0;
 	width: 60%;
