@@ -72,7 +72,7 @@ btnEntrar.addEventListener('click',function(){
   /* TRABALHANDO OBJETOS DE VALIDAÇÃO */
   
 if (usuario.value == userValid.user && senha.value == userValid.senha) {
-  window.location.href='/inicio.html'
+  window.location.href='/app.html'
 
   /* GERAR TOKEN USUÁRIO */
   let token = Math.round().toString(16).substr(2) + Math.round().toString(16).substr(2)
